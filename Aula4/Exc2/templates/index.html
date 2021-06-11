@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blueedtech</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="/static/estilo.css">
+    </head>
+    <body>
+        <div class="titulo">
+            <a href="http://blueedtech.com.br">
+                <img src="{{imagem}}" width="100" alt="Logo da Blue" />
+            </a><h1>Blueedtech</h1>
+            <br><br>
+            <h3>Ola {{nome}}, você tem {{idade}} anos e vem de {{cidade}}</h3>
+
+            {% if maioridade %}
+            <p>VOCÊ É MAIOR DE IDADE!</p>
+            {% else %}
+            <p>VOCÊ É MENOR DE IDADE!</p>
+            {% endif %}
+        </div>
+    </body>
+</html>
