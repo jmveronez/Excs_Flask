@@ -1,0 +1,18 @@
+body{
+    background-color: rgb(214, 62, 62);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#titulo{
+    font-style:italic;
+}
+
+.principal{
+    background-color: rgb(108, 108, 243);
+    padding-bottom: 20px;
+    margin: 0 300px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+}
