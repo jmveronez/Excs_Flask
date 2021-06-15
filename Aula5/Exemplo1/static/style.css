@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(214, 62, 62);
+    background-color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -8,7 +8,7 @@ body{
 }
 
 .principal{
-    background-color: rgb(108, 108, 243);
+    background-color: gray;
     padding-bottom: 20px;
     margin: 0 300px;
     display: flex;

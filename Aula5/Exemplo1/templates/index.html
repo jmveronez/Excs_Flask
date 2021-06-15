@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Formulário</title>
+</head>
+<body>
+    <div class="principal">
+        {% if not criatura %}
+        <form action="" method="POST">
+            <h1 id="titulo">Crie seu personagem</h1>
+                <div class="div_nome">
+                    <label for="nome" id="label-nome">Nome:</label><input type="text" name="nome" id="nome" placeholder="Digite seu nome...">
+                </div class="div_sobrenome">
+                <div>
+                    <label for="sobrenome" id="label-sobrenome">Sobrenome:</label><input type="text" name="sobrenome" id="sobrenome" placeholder="Digite sua sobrenome...">
+                </div> <br>
+                <div class="div_criatura">Criatura: <br>
+                    <label for="Elfo">Elfo:</label><input type="radio" name="criatura" id="Elfo" checked value="ELFO">
+                    <br>
+                    <label for="JAVALI">Javali:</label><input type="radio" name="criatura" id="JAVALI" value="JAVALI">
+                    <br>
+                    <label for="Demonio">Demônio:</label><input type="radio" name="criatura" id="Demonio" value="DEMONIO">
+                </div>
+            <input type="submit" value="Jogar!" class="Botao_Enviar">
+
+            {% else %}
+            <div class="div-form">
+                {{ nome }} {{ sobrenome }}, você é um <b>{{criatura}}</b>
+            </div>
+
+            <div class="div-form">
+                <img src="{{imagem}}" width="200">
+            </div>
+
+            <div class="div-form">
+                <a href="/">Jogar Novamente!</a>
+            </div>
+            {% endif %}
+        </form>
+    </div>
+</body>
+</html>
