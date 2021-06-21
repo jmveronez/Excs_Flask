@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Dano</title>
+    <link rel="stylesheet" href="static/style.css">
+    <title>Pokedex</title>
 </head>
 <body>
-    
+    <div class="bloco">
+        <img src="static/blue.jpg" alt="Logo da Blue" width="150" height="100">
+    </div>
+    <div class="bloco">
+        <h1 id="pokemon_selecionado">Selecione um Pokemon</h1>
+    </div>
+
+    <div class="lista_pokemon">
+        {% for pokemon in pokemons %}
+
+        <div class="card_pokemon" data-nome="{{ pokemon.nome }}" data-numero="{{ pokemon.numero}}">
+            <div class="imagem_pokemon">
+                <img src="{{ caminho_base }}/{{ pokemon.numero }}.png" alt="Imagem do Pokemon">
+            </div>
+            <div class="nome_pokemon">
+                <b>{{pokemon.nome}}</b>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <script src="static/script.js"></script>
 </body>
 </html>
