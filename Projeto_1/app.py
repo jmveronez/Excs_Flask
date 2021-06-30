@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
+import random
 
 app = Flask(__name__)
 
@@ -30,10 +31,21 @@ class filme(db.Model):
     def read_all():
         return filme.query.order_by(filme.id.asc()).all()
 
+    @staticmethod
+    def read_index():
+        filmes = []
+        filmes1 = filmes.append(filme.query.order_by(filme.id.asc()).limit(3).all())
+        filmes2 = filmes.append(filme.query.order_by(filme.id.desc()).limit(3).all())
+        filmes3 = filmes.append(filme.query.order_by(filme.nome.asc()).limit(3).all())
+        filmes4 = filmes.append(filme.query.order_by(filme.nome.desc()).limit(3).all())
+        filmes_aleatorios = random.choice(filmes)
+        return filmes_aleatorios
+
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    registros = filme.read_index()
+    return render_template("index.html", registros=registros)
 
 @app.route("/read")
 def read_all():
@@ -41,6 +53,10 @@ def read_all():
     registros = filme.read_all()
     print(registros)
     return render_template("read_all.html", registros=registros)
+
+@app.route("/create")
+def create():
+    return render_template("create.html")
 
 @app.route("/read/<id_registro>")
 def read_id(id_registro):

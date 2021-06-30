@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locadora</title>
+    <title>Locadora Azul</title>
+    <link rel="stylesheet" href="/static/estilo.css" />
 </head>
-<body>
-    <H1>Deu certo</H1>
+<body onload="random()">
+    {% include 'header.html' %}
+
+    <div class="bloco" id="apresentacao">
+        <h2>Seja bem vindo à Locadora Blue, sinta-se livre para explorar</h2>
+        <div>
+            <p>Aqui você irá encontrar uma vasta gama de filmes para se divertir.
+                <br>
+                Você poderá encontrar títulos como:
+            </p>
+            <div class="bloco" id="random_filmes">
+                    {% for registro in registros %}
+                    <div class="imagem">
+                    <a href="/read/{{ registro['id'] }}"><img src=" {{ registro['imagem_url'] }}" alt="{{ registro['nome'] }}" width="300" height="350" /></a>
+                    </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script src="/static/index.js"></script>
 </body>
 </html>
