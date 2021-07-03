@@ -9,5 +9,41 @@
 </head>
 <body>
     {% include 'header.html' %}
+
+    <div class="bloco">
+        <h2>Criar registro</h2>
+    </div>
+
+    {% if not novo_id %}
+
+    <div class="bloco">
+        <form method="POST" class="form">
+            <div class="bloco form_imput">
+                <label for="nome">Nome: </label>
+                <input type="text" name="nome" id="nome">
+            </div>
+
+            <div class="bloco form_imput">
+                <label for="imagem_url">URL da imagem: </label>
+                <input type="text" name="imagem_url" id="imagem_url">
+            </div>
+
+            <div class="bloco form_imput">
+                <input type="submit" class="botao" value="Enviar">
+            </div>
+        </form>
+    </div>
+
+    {% else %}
+
+    <div class="bloco">
+        <p>
+            Registro Criado com Sucesso! <br /> <br />
+            O ID Atribuído foi <span class="novo_id">{{ novo_id }}</span> <br> <br>
+            <a href="/read/{{novo_id}}" class="botao">Visualizar este registro</a>
+        </p>
+    </div>
+
+    {% endif %}
 </body>
 </html>

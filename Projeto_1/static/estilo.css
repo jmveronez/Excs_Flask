@@ -64,9 +64,9 @@ body {
     background: #d1d4da;
     margin-top: 20px;
     padding-top: 5px;
-    margin-left: 150px;
+    margin-left: 125px;
     height: 575px;
-    width: 1500px;
+    width: 1100px;
     font-size: 25px;
 }
 
@@ -81,4 +81,44 @@ body {
     transform: scale(1.1);
     transition-duration: 0.5s;
     background: #9eacc4
+}
+
+#imagemSingle{
+    max-height: 400px;
+}
+
+.form{
+    width: 600px;
+}
+
+.form_imput{
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form_imput label{
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+.form_imput input[type=text]{
+    width: 450px;
+    padding: 6px;
+    margin: 6px 0;
+    display: inline-block;
+    border-radius: 4px;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+}
+
+.form_imput[type=submit]{
+    align-items: center;
+}
+
+.novo_id{
+    background: #3359ec;
+    border-radius: 5px;
+    color: white;
+    font-size: 20px;
+
 }
